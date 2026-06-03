@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "MySlatePlugin",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "Chieh",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "MySlatePlugin",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

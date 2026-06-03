@@ -1,9 +1,0 @@
-{
-	"RemapUnityFiles": 
-	{
-		"Module.MySlatePlugin.cpp.obj": [
-			"PerModuleInline.gen.cpp.obj",
-			"MySlatePlugin.cpp.obj"
-		]
-	}
-}

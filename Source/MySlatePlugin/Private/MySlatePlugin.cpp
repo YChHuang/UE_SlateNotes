@@ -8,6 +8,8 @@
 #include "ToolMenus.h"
 #include "Widgets/Input/SSearchBox.h"
 #include "Widgets/Input/SCheckBox.h"
+#include "MyCommands.h"
+
 
 static const FName MyTabName("MySlatePlugin");
 
@@ -15,13 +17,38 @@ static const FName MyTabName("MySlatePlugin");
 
 void FMySlatePluginModule::StartupModule()
 {
-    // 1. 向全域 Tab 管理器「登記」這個視窗
+    FMyPluginCommands::Register();
+
+    PluginCommands = MakeShareable(new FUICommandList);
+    PluginCommands->MapAction(
+        FMyPluginCommands::Get().MyAction,
+        FExecuteAction::CreateLambda([]()
+            {
+                UE_LOG(LogTemp, Warning, TEXT("MyAction triggered via Ctrl+M"));
+            }),
+        FCanExecuteAction()
+    );
+
+    FLevelEditorModule& LevelEditorModule =
+        FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
+    LevelEditorModule.GetGlobalLevelEditorActions()->Append(PluginCommands.ToSharedRef());
+
+    // StartupModule 的 Append 之後加：
+    OnMapOpenedHandle = FEditorDelegates::OnMapOpened.AddLambda(
+        [this](const FString&, bool)
+        {
+            FLevelEditorModule& LEModule =
+                FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
+            LEModule.GetGlobalLevelEditorActions()->Append(PluginCommands.ToSharedRef());
+        }
+    );
+
     FGlobalTabmanager::Get()->RegisterNomadTabSpawner(
         MyTabName,
         FOnSpawnTab::CreateRaw(this, &FMySlatePluginModule::OnSpawnPluginTab)
     )
         .SetDisplayName(LOCTEXT("TabTitle", "My Slate Plugin"))
-        .SetMenuType(ETabSpawnerMenuType::Hidden); // 不自動出現在 Window 選單
+        .SetMenuType(ETabSpawnerMenuType::Hidden);
 
     UToolMenus::RegisterStartupCallback(
         FSimpleMulticastDelegate::FDelegate::CreateRaw(
@@ -30,9 +57,14 @@ void FMySlatePluginModule::StartupModule()
     );
 }
 
+
 void FMySlatePluginModule::ShutdownModule()
 {
+    FMyPluginCommands::Unregister();
     // 一定要 Unregister，否則 Editor 重載 Plugin 會崩潰
+    // ShutdownModule 加：
+    FEditorDelegates::OnMapOpened.Remove(OnMapOpenedHandle);
+    FMyPluginCommands::Unregister();
     UToolMenus::UnRegisterStartupCallback(this);
     UToolMenus::UnregisterOwner(this);
 

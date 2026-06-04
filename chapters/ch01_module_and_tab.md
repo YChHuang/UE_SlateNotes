@@ -233,6 +233,4 @@ enum EVerticalAlignment
 | `SBox`                    | 單子容器，用來控制尺寸與對齊                          |
 | `ShutdownModule`          | 一定要 Unregister 所有登記，否則熱重載崩潰             |
 
----
-
-[下一章 →](./ch02_tool_menus.md)   
+--- 

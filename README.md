@@ -11,7 +11,7 @@
 | [第一章](./chapters/ch01_module_and_tab.md) | Module 生命週期 × Tab 系統 × 基礎 Slate 語法         |
 | [第二章](./chapters/ch02_tool_menus.md)                     | 選單系統：ToolMenus 與 RegisterMenus 的 delay 機制  |
 | [第三章](./chapters/ch03_input_widgets.md)                   | Slate 元件和排版系統：HAlign、VAlign 與常用 Layout Widget |
-| 第四章 *(coming soon)*                      | 狀態與互動：SButton、SEditableTextBox、TAttribute  |
+| [第四章](./chapters/ch04_keybinding.md)                  | 快捷鍵綁定  |
 
 ---
 
@@ -25,7 +25,9 @@ MySlatePlugin/
 ├── Source/MySlatePlugin/
 │   ├── MySlatePlugin.Build.cs
 │   ├── Public/MySlatePlugin.h
+│   ├── Public/MyCommands.h
 │   └── Private/MySlatePlugin.cpp
+│   └── Private/MyCommands.cpp
 ```
 
 這是一個最小的 UE Editor Plugin，啟動後會在 `Window` 選單新增一個入口，

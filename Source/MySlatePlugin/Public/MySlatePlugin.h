@@ -3,6 +3,10 @@
 #pragma once
 
 #include "Modules/ModuleManager.h"
+#include "Framework/Commands/Commands.h"
+#include "MyCommands.h"
+#include "LevelEditor.h"
+#include "Framework/Commands/UICommandList.h"
 
 class FMySlatePluginModule : public IModuleInterface
 {
@@ -18,4 +22,7 @@ private:
 
 	FText InputText;
 	bool isCheck = false;
+	FDelegateHandle OnMapOpenedHandle;
+	TSharedPtr<FUICommandList> CommandList;
+	TSharedPtr<FUICommandList> PluginCommands;
 };

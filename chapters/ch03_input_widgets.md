@@ -150,5 +150,3 @@ SNew(SCheckBox)
 | `SCheckBox` | `Widgets/Input/SCheckBox.h` | `OnCheckStateChanged` | `void(ECheckBoxState)` |
 
 ---
-
-[← 回目錄](../README.md) | 第四章 *(coming soon)*

@@ -41,10 +41,11 @@ public class MySlatePlugin : ModuleRules
 				"EditorStyle",    // Editor 樣式（UE5 改成 EditorStyle 或 AppStyle）
 				"UnrealEd",       // Editor 功能
 				"ToolMenus",      // 選單系統（UE5）
-				"LevelEditor",    // 整合到 Level Editor
+				"LevelEditor",    // 整合到 Level Edito
+				"InputCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
-			);
+            );
 		
 		
 		DynamicallyLoadedModuleNames.AddRange(

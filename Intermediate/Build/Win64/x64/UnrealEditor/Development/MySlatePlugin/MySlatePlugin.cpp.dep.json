@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\cy\\documents\\unreal projects\\testplugin\\plugins\\myslateplugin\\source\\myslateplugin\\private\\myslateplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\cy\\documents\\unreal projects\\testplugin\\intermediate\\build\\win64\\x64\\testplugineditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\cy\\documents\\unreal projects\\testplugin\\plugins\\myslateplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\myslateplugin\\definitions.myslateplugin.h",
+            "c:\\users\\cy\\documents\\unreal projects\\testplugin\\plugins\\myslateplugin\\source\\myslateplugin\\public\\myslateplugin.h",
+            "c:\\users\\cy\\documents\\unreal projects\\testplugin\\plugins\\myslateplugin\\source\\myslateplugin\\public\\mycommands.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\editor\\leveleditor\\public\\leveleditor.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\editor\\leveleditor\\public\\ileveleditor.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\runtime\\engine\\public\\elements\\framework\\engineelementslibrary.h",
+            "d:\\ues\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\engineelementslibrary.generated.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\editor\\leveleditor\\public\\viewporttypedefinition.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\editor\\leveleditor\\public\\leveleditoroutlinersettings.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\developer\\toolwidgets\\public\\filters\\genericfilter.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\developer\\toolwidgets\\public\\filters\\filterbase.h",
+            "d:\\ues\\ue_5.6\\engine\\source\\runtime\\slate\\public\\widgets\\input\\ssearchbox.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
